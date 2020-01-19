@@ -24,6 +24,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+/**
+ * 我的二维码
+ */
 public class QrActivity extends BaseActivity {
 
     @BindView(R.id.qr_iv)
@@ -50,11 +53,7 @@ public class QrActivity extends BaseActivity {
                     String qrUrl = userInfo.getUserQrUrl();
                     if (!TextUtils.isEmpty(qrUrl)) {
                         Glide.with(QrActivity.this).load(qrUrl).into(ivQr);
-                    } else {
-                        Glide.with(QrActivity.this).load(R.mipmap.ic_ka_ka_2).into(ivQr);
                     }
-                }else {
-                 //   Glide.with(QrActivity.this).load(R.mipmap.ic_ka_ka_2).into(ivQr);
                 }
             }
         }, 400);

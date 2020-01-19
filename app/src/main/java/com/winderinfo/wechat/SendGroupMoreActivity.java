@@ -26,6 +26,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+/**
+ * 群发 再来一条
+ */
 public class SendGroupMoreActivity extends BaseActivity {
 
     @BindView(R.id.send_num_tv)

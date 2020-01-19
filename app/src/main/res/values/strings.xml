@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">截图宝</string>
+    <string name="app_name">微信</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

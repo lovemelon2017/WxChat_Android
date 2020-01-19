@@ -38,6 +38,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.OnClick;
 
+/**
+ * 群发选择联系人
+ */
 public class ChatDetailsActivity extends BaseActivity {
 
     @BindView(R.id.chat_details_name_tv)
