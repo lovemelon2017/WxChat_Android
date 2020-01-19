@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#EDEDED</color>
+    <color name="colorPrimaryDark">#EDEDED</color>
+    <color name="colorAccent">#08C261</color>
+
+    <color name="cl_background">#EDEDED</color>
+    <color name="cl_checked">#08C261</color>
+    <color name="cl_uncheck">#000000</color>
+    <color name="cl_fff">#ffffff</color>
+    <color name="cl_000">#000000</color>
+    <color name="cl_line">#dedede</color>
+    <color name="cl_text_gray">#ACACAC</color>
+    <color name="cl_text_blue">#596B93</color>
+    <color name="cl_808080">#808080</color>
+    <color name="cl_message">#FA5251</color>
+</resources>

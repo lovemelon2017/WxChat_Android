@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cl_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="群发助手"
+            android:textColor="@color/cl_000"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_set" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/cl_line" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <!--没有群发消息-->
+        <LinearLayout
+            android:id="@+id/ll_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="135dp"
+                android:layout_height="105dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="57dp"
+                android:src="@drawable/ic_help_send" />
+
+            <TextView
+                android:layout_width="313dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="41dp"
+                android:gravity="center"
+                android:lineSpacingExtra="4dp"
+                android:text="群发助手让你可以把消息发给多个朋友，不错过任何节日或纪念日"
+                android:textColor="#A3A3A3"
+                android:textSize="12sp" />
+
+
+            <TextView
+                android:id="@+id/help_add_tv"
+                android:layout_width="324dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/help_send_shape"
+                android:gravity="center"
+                android:text="新建群发"
+                android:textColor="@color/cl_fff"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_send"
+            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"/>
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/fl_send_new"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/cl_fff"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/add_new_tv"
+            android:layout_width="78dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_green_3"
+            android:gravity="center"
+            android:text="新建群发"
+            android:textColor="@color/cl_fff"
+            android:textSize="14sp" />
+
+    </FrameLayout>
+
+</LinearLayout>

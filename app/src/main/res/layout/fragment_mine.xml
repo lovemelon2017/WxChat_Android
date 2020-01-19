@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cl_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cl_fff"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="11dp"
+                android:src="@drawable/ic_camera" />
+        </FrameLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mine_user_cc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/mine_head_iv"
+                android:layout_width="58dp"
+                android:layout_height="58dp"
+                android:layout_marginLeft="21dp"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="35dp"
+                android:src="@drawable/q5"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:riv_corner_radius="3dp" />
+
+            <TextView
+                android:id="@+id/mine_name_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:text="倔强青铜"
+                android:textColor="@color/cl_000"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintLeft_toRightOf="@+id/mine_head_iv"
+                app:layout_constraintTop_toTopOf="@+id/mine_head_iv" />
+
+            <TextView
+                android:id="@+id/mine_wx_num_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="微信号:"
+                android:textColor="@color/cl_808080"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/mine_head_iv"
+                app:layout_constraintLeft_toLeftOf="@+id/mine_name_tv" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_right"
+                app:layout_constraintBottom_toBottomOf="@+id/mine_wx_num_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mine_wx_num_tv" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_marginRight="34dp"
+                android:src="@drawable/ic_qr"
+                app:layout_constraintBottom_toBottomOf="@+id/mine_wx_num_tv"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/mine_wx_num_tv" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/cl_fff">
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:src="@drawable/ic_me_pay" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="50dp"
+                    android:text="支付"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_right" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@color/cl_fff"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="12dp"
+                        android:src="@drawable/ic_me_sc" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:text="收藏"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_right" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/cl_line" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="12dp"
+                        android:src="@drawable/ic_me_xc" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:text="相册"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_right" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/cl_line" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="12dp"
+                        android:src="@drawable/ic_me_kb" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:text="卡包"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_right" />
+
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_marginLeft="50dp"
+                    android:background="@color/cl_line" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="27dp"
+                        android:layout_height="27dp"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="12dp"
+                        android:src="@drawable/ic_me_bq" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="50dp"
+                        android:text="表情"
+                        android:textColor="#333333"
+                        android:textSize="15sp" />
+
+                    <ImageView
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_gravity="center_vertical|right"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_right" />
+
+                </FrameLayout>
+            </LinearLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/cl_fff">
+
+                <ImageView
+                    android:layout_width="27dp"
+                    android:layout_height="27dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="12dp"
+                    android:src="@drawable/ic_me_set" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="50dp"
+                    android:text="设置"
+                    android:textColor="#333333"
+                    android:textSize="15sp" />
+
+                <ImageView
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/ic_right" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</LinearLayout>

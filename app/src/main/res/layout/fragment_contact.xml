@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/cl_background">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_left"
+                android:text="通讯录"
+                android:textColor="@color/cl_000"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="61dp"
+                android:src="@drawable/ic_search" />
+
+            <ImageView
+                android:id="@+id/contact_add_iv"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="11dp"
+                android:src="@drawable/ic_add" />
+        </FrameLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/contact_head_lay" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/contact_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
+                <include layout="@layout/contact_footer_lay" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="456dp"
+        android:layout_gravity="right|center_vertical"
+        android:layout_marginTop="30dp"
+        android:layout_marginRight="4dp"
+        android:src="@mipmap/ic_letter_bg" />
+
+</FrameLayout>

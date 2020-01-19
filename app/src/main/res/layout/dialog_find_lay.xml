@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cl_fff"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialog_dt_tv1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="动态1标记已读"
+        android:textColor="@color/cl_000" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/cl_line" />
+
+    <TextView
+        android:id="@+id/dialog_dt_tv2"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="动态2标记已读"
+        android:textColor="@color/cl_000" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/cl_line" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <EditText
+            android:id="@+id/dialog_et"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:background="@drawable/dialog_et_shape"
+            android:gravity="center"
+            android:hint="要修改动态数量"
+            android:inputType="number"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textColor="@color/cl_000"
+            android:textColorHint="#CCCCCC"
+            android:textSize="14sp" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="8dp"
+        android:background="@color/cl_background" />
+
+    <TextView
+        android:id="@+id/dialog_dt_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="@color/cl_000" />
+
+</LinearLayout>

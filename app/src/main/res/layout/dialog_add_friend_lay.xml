@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cl_fff"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/add_item_1_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="添加50个"
+        android:textColor="#191919"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+    <TextView
+        android:id="@+id/add_item_2_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="添加100个"
+        android:textColor="#191919"
+        android:textSize="15sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp" />
+
+    <TextView
+        android:id="@+id/add_item_3_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="添加500个"
+        android:textColor="#191919"
+        android:textSize="15sp" />
+
+    <View
+        android:background="@color/cl_background"
+        android:layout_width="match_parent"
+        android:layout_height="8dp" />
+
+    <TextView
+        android:id="@+id/add_item_cancel_tv"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:text="取消"
+        android:textColor="#191919"
+        android:textSize="15sp" />
+
+
+</LinearLayout>

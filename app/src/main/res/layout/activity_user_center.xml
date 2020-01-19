@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cl_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="个人信息"
+            android:textColor="@color/cl_000"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/cl_fff"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/user_fl"
+            android:layout_width="match_parent"
+            android:layout_height="70dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="头像"
+                android:textColor="@color/cl_000"
+                android:textSize="16sp" />
+
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/center_head_iv"
+                android:layout_width="57dp"
+                android:layout_height="57dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="28dp"
+                android:src="@drawable/q5"
+                app:riv_corner_radius="4dp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_right" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/cl_line" />
+
+        <FrameLayout
+            android:id="@+id/fl_nick_name"
+            android:layout_width="match_parent"
+            android:layout_height="51dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="昵称"
+                android:textColor="@color/cl_000"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/center_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="32dp"
+                android:singleLine="true"
+                android:text="倔强青铜"
+                android:textColor="#B2B2B2"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_right" />
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/cl_line" />
+
+        <FrameLayout
+            android:id="@+id/fl_nick_wx"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="微信号"
+                android:textColor="@color/cl_000"
+                android:textSize="16sp" />
+
+
+            <TextView
+                android:id="@+id/center_user_wx_num"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="16dp"
+                android:singleLine="true"
+                android:text="love"
+                android:textColor="#B2B2B2"
+                android:textSize="15sp" />
+
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/cl_line" />
+
+        <FrameLayout
+            android:id="@+id/qr_fl"
+            android:layout_width="match_parent"
+            android:layout_height="51dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="二维码名片"
+                android:textColor="@color/cl_000"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="17dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="30dp"
+                android:src="@drawable/ic_qr" />
+
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_right" />
+
+
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:layout_marginLeft="15dp"
+            android:background="@color/cl_line" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="15dp"
+                android:text="更多"
+                android:textColor="@color/cl_000"
+                android:textSize="16sp" />
+
+
+            <ImageView
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="right|center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_right" />
+
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginTop="13dp"
+        android:background="@color/cl_fff">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="我的地址"
+            android:textColor="@color/cl_000"
+            android:textSize="16sp" />
+
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/ic_right" />
+
+
+    </FrameLayout>
+
+</LinearLayout>

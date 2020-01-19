@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cl_fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/contact_head_add_ll"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/ic_contact_add" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="新的朋友"
+            android:textColor="@color/cl_000"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="65dp"
+        android:background="@color/cl_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/ic_contact_ql" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="群聊"
+            android:textColor="@color/cl_000"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="65dp"
+        android:background="@color/cl_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/ic_contact_bq" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="标签"
+            android:textColor="@color/cl_000"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="65dp"
+        android:background="@color/cl_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="13dp"
+            android:src="@drawable/ic_contact_gzh" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="公众号"
+            android:textColor="@color/cl_000"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+
+</LinearLayout>

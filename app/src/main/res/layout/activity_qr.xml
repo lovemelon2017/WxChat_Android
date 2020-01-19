@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cl_background"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="52dp">
+
+        <ImageView
+            android:id="@+id/back_iv"
+            android:layout_width="27dp"
+            android:layout_height="27dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_back" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="5dp"
+            android:text="二维码名片"
+            android:textColor="@color/cl_000"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <ImageView
+                android:id="@+id/qr_up_pv"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_gravity="center_vertical|right"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_more" />
+
+        </FrameLayout>
+    </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <FrameLayout
+
+            android:layout_width="317dp"
+            android:layout_height="420dp"
+            android:layout_gravity="center"
+            android:background="@drawable/shape_white_5">
+
+            <ImageView
+                android:id="@+id/qr_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+    </FrameLayout>
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="317dp"-->
+    <!--android:layout_height="420dp"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginTop="55dp"-->
+    <!--android:background="@drawable/qr_white_shape"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="87dp"-->
+    <!--android:orientation="horizontal">-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="57dp"-->
+    <!--android:layout_height="57dp"-->
+    <!--android:layout_gravity="center_vertical"-->
+    <!--android:layout_marginLeft="14dp"-->
+    <!--android:src="@drawable/q5" />-->
+
+    <!--<LinearLayout-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_marginLeft="12dp"-->
+    <!--android:layout_marginTop="25dp"-->
+    <!--android:orientation="vertical">-->
+
+    <!--<TextView-->
+    <!--android:id="@+id/qr_user_name"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:text="倔强青铜"-->
+    <!--android:textColor="@color/cl_000"-->
+    <!--android:textSize="15sp" />-->
+
+    <!--</LinearLayout>-->
+
+    <!--</LinearLayout>-->
+
+    <!--<ImageView-->
+    <!--android:layout_width="287dp"-->
+    <!--android:layout_height="287dp"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:background="@color/cl_line" />-->
+
+    <!--<TextView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_gravity="center_horizontal"-->
+    <!--android:layout_marginTop="16dp"-->
+    <!--android:text="扫一扫上面的二维码图案，加我微信"-->
+    <!--android:textColor="#B3B3B3"-->
+    <!--android:textSize="12sp" />-->
+
+    <!--</LinearLayout>-->
+
+</LinearLayout>

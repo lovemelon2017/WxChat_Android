@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/cl_fff"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/contact_letter_tv"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:background="#EDEDED"
+        android:gravity="center_vertical"
+        android:paddingLeft="14dp"
+        android:text="A"
+        android:textColor="#767676"
+        android:textSize="11sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/select_cb"
+            android:layout_width="17dp"
+            android:layout_height="17dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:button="@null"
+            android:background="@drawable/select_cb" />
+
+        <ImageView
+            android:id="@+id/contact_item_iv"
+            android:layout_width="37dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="14dp"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/contact_item_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="15dp"
+            android:text="名字"
+            android:textColor="@color/cl_000"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/contact_item_line"
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginLeft="100dp"
+        android:background="@color/cl_line" />
+
+</LinearLayout>

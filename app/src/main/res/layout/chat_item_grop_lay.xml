@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_parent_v"
+    android:layout_width="match_parent"
+    android:layout_height="65dp">
+
+    <ImageView
+        android:id="@+id/chat_user_head_iv"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:layout_marginLeft="14dp"
+        android:src="@mipmap/ic_launcher"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/chat_message_tv"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:background="@drawable/message_circle_shape"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/cl_fff"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@+id/chat_user_head_iv"
+        app:layout_constraintLeft_toRightOf="@+id/chat_user_head_iv"
+        app:layout_constraintRight_toRightOf="@+id/chat_user_head_iv"
+        app:layout_constraintTop_toTopOf="@+id/chat_user_head_iv" />
+
+    <TextView
+        android:id="@+id/chat_user_name_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="11dp"
+        android:text="韩帅"
+        android:textColor="@color/cl_000"
+        android:textSize="15sp"
+        app:layout_constraintLeft_toRightOf="@+id/chat_user_head_iv"
+        app:layout_constraintTop_toTopOf="@+id/chat_user_head_iv" />
+
+    <TextView
+        android:id="@+id/chat_user_content_tv"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="上班了么？"
+        android:textColor="@color/cl_text_gray"
+        android:textSize="12sp"
+        app:layout_constraintLeft_toLeftOf="@+id/chat_user_name_tv"
+        app:layout_constraintTop_toBottomOf="@+id/chat_user_name_tv" />
+
+    <TextView
+        android:id="@+id/chat_user_time_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="15dp"
+        android:text="早上10:00"
+        android:textColor="@color/cl_text_gray"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/chat_user_name_tv"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/chat_user_name_tv" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0.5dp"
+        android:background="@color/cl_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/chat_user_name_tv" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
