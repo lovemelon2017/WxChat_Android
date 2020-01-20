@@ -4,6 +4,7 @@ package com.winderinfo.wechat.fragment;
 import android.content.Intent;
 import android.os.Handler;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -108,10 +109,9 @@ public class ContactFragment extends BaseFragment {
     @BindView(R.id.contact_rv)
     RecyclerView mRv;
     ContactAdapter mAdapter;
-    @BindView(R.id.contact_footer_tv)
+
     TextView tvFootContactNum;
 
-    @BindView(R.id.contact_head_add_ll)
     LinearLayout llAddFriend;
 
     int randomAllNum = 30;//随机生成数
@@ -138,6 +138,13 @@ public class ContactFragment extends BaseFragment {
 
         mRv.setLayoutManager(new LinearLayoutManager(getContext()));
         mAdapter = new ContactAdapter(R.layout.contact_item_lay, beanList);
+
+        View headView = LayoutInflater.from(getActivity()).inflate(R.layout.contact_head_lay, null);
+        View footView = LayoutInflater.from(getActivity()).inflate(R.layout.contact_footer_lay, null);
+        tvFootContactNum = footView.findViewById(R.id.contact_footer_tv);
+        llAddFriend = headView.findViewById(R.id.contact_head_add_ll);
+        mAdapter.addHeaderView(headView);
+        mAdapter.addFooterView(footView);
 
         mRv.setAdapter(mAdapter);
 
@@ -274,6 +281,8 @@ public class ContactFragment extends BaseFragment {
         dialog.show(getFragmentManager(), "dialog");
     }
 
+    String letterTag = "";
+
     private List<ContactBean> getDefaultData() {
 
         ArrayList<Integer> numList = new ArrayList<Integer>();
@@ -309,12 +318,26 @@ public class ContactFragment extends BaseFragment {
         Collections.sort(list, pinyinComparator);
         beanList.addAll(list);
 
+
+        for (int i = 0; i < beanList.size(); i++) {
+            ContactBean bean = beanList.get(i);
+            String letter = bean.getLetter();
+            if (letter.equals(letterTag)) {
+                bean.setShowLetter(false);
+            } else {
+                letterTag = letter;
+                bean.setShowLetter(true);
+            }
+        }
+
+
         DbUtil.insertContact(list);
         return list;
 
     }
 
     private List<ContactBean> getAddData() {
+        letterTag = "";
         pinyinComparator = new PinyinComparator();
         List<ContactBean> datas = new ArrayList<>();
         new Handler().post(new Runnable() {
@@ -380,7 +403,20 @@ public class ContactFragment extends BaseFragment {
                 datas.addAll(data);
                 datas.addAll(list);
 
+
                 Collections.sort(datas, pinyinComparator);
+
+                for (int i = 0; i < datas.size(); i++) {
+                    ContactBean bean = datas.get(i);
+                    String letter = bean.getLetter();
+                    if (letter.equals(letterTag)) {
+                        bean.setShowLetter(false);
+                    } else {
+                        letterTag = letter;
+                        bean.setShowLetter(true);
+                    }
+                }
+
                 DbUtil.insertContact(datas);
 
                 mAdapter.setNewData(datas);

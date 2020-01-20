@@ -37,12 +37,9 @@ public class SelectContactAdapter extends BaseQuickAdapter<ContactBean, BaseView
         int adapterPosition = helper.getAdapterPosition();
         String strLetter = item.getLetter();
         tvLetter.setText(strLetter);
-        Log.e("han", "赋值:" + lastLetter + ">>>" + item.getName());
-        Log.e("han", "本条:" + strLetter+ ">>>" + item.getName());
 
-        if (!lastLetter.equals(strLetter)) {
-            lastLetter = strLetter;
-            Log.e("han", lastLetter);
+
+        if (item.isShowLetter()) {
             tvLetter.setVisibility(View.VISIBLE);
         } else {
             tvLetter.setVisibility(View.GONE);
@@ -55,8 +52,8 @@ public class SelectContactAdapter extends BaseQuickAdapter<ContactBean, BaseView
             //查看下一个数据
             if (adapterPosition < data.size() - 1) {
                 ContactBean bean = data.get(adapterPosition + 1);
-                String letter = bean.getLetter();
-                if (lastLetter.equals(letter)) {
+                boolean show = bean.getIsShowLetter();
+                if (!show) {
                     helper.getView(R.id.contact_item_line).setVisibility(View.VISIBLE);
                 } else {
                     helper.getView(R.id.contact_item_line).setVisibility(View.GONE);

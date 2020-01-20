@@ -18,15 +18,25 @@ public class ContactBean implements Serializable {
     int head;
     String name;
     boolean isCheck;
+    boolean isShowLetter;
     String letter;
 
-    @Generated(hash = 1067278338)
+    public boolean isShowLetter() {
+        return isShowLetter;
+    }
+
+    public void setShowLetter(boolean showLetter) {
+        isShowLetter = showLetter;
+    }
+
+    @Generated(hash = 180997814)
     public ContactBean(long id, int head, String name, boolean isCheck,
-            String letter) {
+            boolean isShowLetter, String letter) {
         this.id = id;
         this.head = head;
         this.name = name;
         this.isCheck = isCheck;
+        this.isShowLetter = isShowLetter;
         this.letter = letter;
     }
 
@@ -80,5 +90,13 @@ public class ContactBean implements Serializable {
 
     public void setIsCheck(boolean isCheck) {
         this.isCheck = isCheck;
+    }
+
+    public boolean getIsShowLetter() {
+        return this.isShowLetter;
+    }
+
+    public void setIsShowLetter(boolean isShowLetter) {
+        this.isShowLetter = isShowLetter;
     }
 }

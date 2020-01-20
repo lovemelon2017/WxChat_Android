@@ -1,6 +1,7 @@
 package com.winderinfo.wechat;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,6 +46,8 @@ public class SelectActivity extends BaseActivity {
     List<ContactBean> beanList = new ArrayList<>();
     PinyinComparator pinyinComparator;
 
+    String letterTag = "";
+
     @Override
     public int getLayoutId() {
         return R.layout.activity_select;
@@ -56,12 +59,24 @@ public class SelectActivity extends BaseActivity {
 
         List<ContactBean> contactBeans = DbUtil.queryContactAll();
 
+
         pinyinComparator = new PinyinComparator();
         Collections.sort(contactBeans, pinyinComparator);
 
+        for (int i = 0; i < contactBeans.size(); i++) {
+            ContactBean bean = contactBeans.get(i);
+            String letter = bean.getLetter();
+            if (letter.equals(letterTag)) {
+                bean.setShowLetter(false);
+            } else {
+                letterTag = letter;
+                bean.setShowLetter(true);
+            }
+        }
         mAdapter = new SelectContactAdapter(R.layout.select_contact_item_lay, contactBeans);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(mAdapter);
+
 
 
         mAdapter.setOnItemClickListener(new BaseQuickAdapter.OnItemClickListener() {

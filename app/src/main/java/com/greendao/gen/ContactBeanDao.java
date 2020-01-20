@@ -28,7 +28,8 @@ public class ContactBeanDao extends AbstractDao<ContactBean, Long> {
         public final static Property Head = new Property(1, int.class, "head", false, "HEAD");
         public final static Property Name = new Property(2, String.class, "name", false, "NAME");
         public final static Property IsCheck = new Property(3, boolean.class, "isCheck", false, "IS_CHECK");
-        public final static Property Letter = new Property(4, String.class, "letter", false, "LETTER");
+        public final static Property IsShowLetter = new Property(4, boolean.class, "isShowLetter", false, "IS_SHOW_LETTER");
+        public final static Property Letter = new Property(5, String.class, "letter", false, "LETTER");
     }
 
 
@@ -48,7 +49,8 @@ public class ContactBeanDao extends AbstractDao<ContactBean, Long> {
                 "\"HEAD\" INTEGER NOT NULL ," + // 1: head
                 "\"NAME\" TEXT," + // 2: name
                 "\"IS_CHECK\" INTEGER NOT NULL ," + // 3: isCheck
-                "\"LETTER\" TEXT);"); // 4: letter
+                "\"IS_SHOW_LETTER\" INTEGER NOT NULL ," + // 4: isShowLetter
+                "\"LETTER\" TEXT);"); // 5: letter
     }
 
     /** Drops the underlying database table. */
@@ -68,10 +70,11 @@ public class ContactBeanDao extends AbstractDao<ContactBean, Long> {
             stmt.bindString(3, name);
         }
         stmt.bindLong(4, entity.getIsCheck() ? 1L: 0L);
+        stmt.bindLong(5, entity.getIsShowLetter() ? 1L: 0L);
  
         String letter = entity.getLetter();
         if (letter != null) {
-            stmt.bindString(5, letter);
+            stmt.bindString(6, letter);
         }
     }
 
@@ -86,10 +89,11 @@ public class ContactBeanDao extends AbstractDao<ContactBean, Long> {
             stmt.bindString(3, name);
         }
         stmt.bindLong(4, entity.getIsCheck() ? 1L: 0L);
+        stmt.bindLong(5, entity.getIsShowLetter() ? 1L: 0L);
  
         String letter = entity.getLetter();
         if (letter != null) {
-            stmt.bindString(5, letter);
+            stmt.bindString(6, letter);
         }
     }
 
@@ -105,7 +109,8 @@ public class ContactBeanDao extends AbstractDao<ContactBean, Long> {
             cursor.getInt(offset + 1), // head
             cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2), // name
             cursor.getShort(offset + 3) != 0, // isCheck
-            cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4) // letter
+            cursor.getShort(offset + 4) != 0, // isShowLetter
+            cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5) // letter
         );
         return entity;
     }
@@ -116,7 +121,8 @@ public class ContactBeanDao extends AbstractDao<ContactBean, Long> {
         entity.setHead(cursor.getInt(offset + 1));
         entity.setName(cursor.isNull(offset + 2) ? null : cursor.getString(offset + 2));
         entity.setIsCheck(cursor.getShort(offset + 3) != 0);
-        entity.setLetter(cursor.isNull(offset + 4) ? null : cursor.getString(offset + 4));
+        entity.setIsShowLetter(cursor.getShort(offset + 4) != 0);
+        entity.setLetter(cursor.isNull(offset + 5) ? null : cursor.getString(offset + 5));
      }
     
     @Override

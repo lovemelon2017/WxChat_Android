@@ -54,7 +54,7 @@ public class HomeFragment extends BaseFragment {
             "正在忙，稍等", "OK"};
 
     public static final String chatHeads[] = {"咚咚打次", "瓦乌李小区群", "512宿舍", "公司群",
-            "郑州大学交流群", "薪资交流群", "小吃群", "快递外卖群"};
+            "郑州大学交流群", "交流群", "小吃群", "快递外卖群"};
 
 
     public static final String subContents[] = {"AI前线,对话阿里巴巴:如何成为一个优秀的架构师",

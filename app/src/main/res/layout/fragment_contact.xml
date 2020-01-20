@@ -41,28 +41,14 @@
                 android:src="@drawable/ic_add" />
         </FrameLayout>
 
-        <androidx.core.widget.NestedScrollView
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contact_rv"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
 
-                <include layout="@layout/contact_head_lay" />
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/contact_rv"
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" />
-
-                <include layout="@layout/contact_footer_lay" />
-
-            </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 
     <ImageView

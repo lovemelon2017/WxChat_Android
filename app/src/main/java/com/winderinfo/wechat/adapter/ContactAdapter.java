@@ -30,35 +30,28 @@ public class ContactAdapter extends BaseQuickAdapter<ContactBean, BaseViewHolder
     @Override
     protected void convert(BaseViewHolder helper, ContactBean item) {
         List<ContactBean> data = getData();
-
         TextView tvLetter = helper.getView(R.id.contact_letter_tv);
         int adapterPosition = helper.getAdapterPosition();
+        Log.e("han", "适配器位置:" + adapterPosition);
 
 
         String strLetter = item.getLetter();
         tvLetter.setText(strLetter);
-
-        Log.e("han", "赋值2:" + lastLetter + ">>>" + item.getName());
-        Log.e("han", "本条2:" + strLetter+ ">>>" + item.getName());
-
-        if (!lastLetter.equals(strLetter)) {
-            lastLetter = strLetter;
-            Log.e("han", "显示");
+        if (item.isShowLetter()) {
             tvLetter.setVisibility(View.VISIBLE);
         } else {
-            Log.e("han", "不显示");
             tvLetter.setVisibility(View.GONE);
         }
 
 
-        if (adapterPosition == data.size() - 1) {
+        if (adapterPosition == data.size()) {
             helper.getView(R.id.contact_item_line).setVisibility(View.GONE);
         } else {
             //查看下一个数据
-            if (adapterPosition < data.size() - 1) {
-                ContactBean bean = data.get(adapterPosition + 1);
-                String letter = bean.getLetter();
-                if (lastLetter.equals(letter)) {
+            if (adapterPosition < data.size() + 1) {
+                ContactBean bean = data.get(adapterPosition);
+                boolean show = bean.getIsShowLetter();
+                if (!show) {
                     helper.getView(R.id.contact_item_line).setVisibility(View.VISIBLE);
                 } else {
                     helper.getView(R.id.contact_item_line).setVisibility(View.GONE);
