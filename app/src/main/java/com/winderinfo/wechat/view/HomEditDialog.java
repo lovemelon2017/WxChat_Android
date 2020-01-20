@@ -72,6 +72,10 @@ public class HomEditDialog extends DialogFragment {
                 tvStateRead.setVisibility(View.VISIBLE);
                 tvNumEdit.setVisibility(View.VISIBLE);
                 tvContent.setVisibility(View.GONE);
+            } else if (type == 5) {
+                tvStateRead.setVisibility(View.GONE);
+                tvNumEdit.setVisibility(View.GONE);
+                tvContent.setVisibility(View.GONE);
             } else {
                 tvStateRead.setVisibility(View.GONE);
                 tvNumEdit.setVisibility(View.GONE);
