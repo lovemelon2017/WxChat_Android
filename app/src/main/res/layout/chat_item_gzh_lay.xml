@@ -16,12 +16,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/chat_message_tv"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:background="@drawable/message_circle_shape"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/cl_fff"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toTopOf="@+id/chat_user_head_iv"
+        app:layout_constraintLeft_toRightOf="@+id/chat_user_head_iv"
+        app:layout_constraintRight_toRightOf="@+id/chat_user_head_iv"
+        app:layout_constraintTop_toTopOf="@+id/chat_user_head_iv" />
+
+    <TextView
         android:id="@+id/chat_user_name_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="11dp"
         android:text="丰巢智能柜"
-        android:textColor="@color/cl_000"
+        android:textColor="@color/cl_text_blue"
         android:textSize="15sp"
         app:layout_constraintLeft_toRightOf="@+id/chat_user_head_iv"
         app:layout_constraintTop_toTopOf="@+id/chat_user_head_iv" />

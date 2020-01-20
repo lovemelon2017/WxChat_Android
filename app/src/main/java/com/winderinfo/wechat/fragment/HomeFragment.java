@@ -28,6 +28,7 @@ import com.winderinfo.wechat.db.DbUtil;
 import com.winderinfo.wechat.event.GroupEvent;
 import com.winderinfo.wechat.event.MyEvent;
 import com.winderinfo.wechat.view.EditMessageCenterDialog;
+import com.winderinfo.wechat.view.EditSubCenterDialog;
 import com.winderinfo.wechat.view.HomEditDialog;
 
 import org.greenrobot.eventbus.EventBus;
@@ -58,7 +59,9 @@ public class HomeFragment extends BaseFragment {
 
 
     public static final String subContents[] = {"AI前线,对话阿里巴巴:如何成为一个优秀的架构师",
-            "你的男友VS别人家的男友", "好消息!,电话、网络、微信...河南看病有了新平台!", "微信公众号开始测试收费功能"
+            "你的男友VS别人家的男友", "好消息!,电话、网络、微信...河南看病有了新平台!", "微信公众号开始测试收费功能",
+            "好消息,假期期间免费领取", "她来了", "不是所有的爱是你能拥有的", "新的政策是否符合你的需求",
+            "你的推荐就是我的喜欢", "快来体验", "每日一看"
     };
 
     public static final String txNews[] = {"电商年货节大战:鼠元素商品火了,鼠年内裤了解下", "中国经济成绩单今揭晓这些看点需关注", "纪检“内鬼”犯案细节曝光", "万达电影复苏了？", "开车走高速免费路段为何扣了两毛一？ETC系统正优化"};
@@ -96,6 +99,10 @@ public class HomeFragment extends BaseFragment {
                 //点击
                 List<WxBean> data = adapter.getData();
                 WxBean bean = data.get(position);
+                String chatName = bean.getChatName();
+                if ("微信运动".equals(chatName)) {
+                    return;
+                }
                 if (bean.getType() == WxBean.TYPE_CHAT || bean.getType() == WxBean.TYPE_GROUP) {
                     Intent intent = new Intent(getActivity(), ChatDetailsActivity.class);
                     intent.putExtra("bean", bean);
@@ -117,10 +124,8 @@ public class HomeFragment extends BaseFragment {
                 }
                 data.get(position).setLongCheck(true);
                 mAdapter.notifyDataSetChanged();
-
                 WxBean wxBean = data.get(position);
                 showDialog(wxBean);
-
 
                 return true;
             }
@@ -194,7 +199,7 @@ public class HomeFragment extends BaseFragment {
         dialog.setClick(new OnClickDialogEditInterface() {
             @Override
             public void onCancel() {
-
+                dialog.dismiss();
             }
 
             @Override
@@ -235,6 +240,14 @@ public class HomeFragment extends BaseFragment {
                 dialog.dismiss();
                 EventBus.getDefault().post(new MyEvent(2));
             }
+
+            @Override
+            public void onEditContent(WxBean wxBean) {
+
+                showEditSub(wxBean);
+                dialog.dismiss();
+
+            }
         });
 
         dialog.setmOnClickListener(new DialogInterface.OnDismissListener() {
@@ -245,6 +258,26 @@ public class HomeFragment extends BaseFragment {
         });
 
         dialog.show(getFragmentManager(), "dialog");
+    }
+
+    private void showEditSub(WxBean bean) {
+        EditSubCenterDialog subDialog = new EditSubCenterDialog();
+        subDialog.setDialogInterface(new OnClickDialogInterface() {
+            @Override
+            public void onCancel() {
+                subDialog.dismiss();
+            }
+
+            @Override
+            public void onSure(String content) {
+
+                bean.setChatContent(content);
+                DbUtil.insert(bean);
+                subDialog.dismiss();
+                mAdapter.notifyDataSetChanged();
+            }
+        });
+        subDialog.show(getFragmentManager(), "sub");
     }
 
     @Override
@@ -503,7 +536,7 @@ public class HomeFragment extends BaseFragment {
         bean3.setType(5);
         bean3.setIsRead(true);
         bean3.setChatContent("生日快乐!(●ˇ∀ˇ●)");
-        bean3.setChatTime(System.currentTimeMillis() - 1000 * 60 * 60 * mRandom.nextInt(100));
+        bean3.setChatTime(System.currentTimeMillis() - 1000 * 60 * 60 * mRandom.nextInt(50));
         beans.add(bean3);
 
 
@@ -534,8 +567,200 @@ public class HomeFragment extends BaseFragment {
         bean6.setIsRead(true);
         bean6.setChatName("婚礼纪服务号");
         bean6.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
-        bean6.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(200));
+        bean6.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(300));
         beans.add(bean6);
+
+        WxBean bean7 = new WxBean();
+        bean7.setChatHead(3);
+        bean7.setId(beans.size() + 1l);
+        bean7.setType(6);
+        bean7.setIsRead(true);
+        bean7.setChatName("360借条");
+        bean7.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean7.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean7);
+
+        WxBean bean8 = new WxBean();
+        bean8.setChatHead(4);
+        bean8.setId(beans.size() + 1l);
+        bean8.setType(6);
+        bean8.setIsRead(true);
+        bean8.setChatName("CoCo都可");
+        bean8.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean8.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean8);
+
+        WxBean bean9 = new WxBean();
+        bean9.setChatHead(5);
+        bean9.setId(beans.size() + 1l);
+        bean9.setType(6);
+        bean9.setIsRead(true);
+        bean9.setChatName("HM官方");
+        bean9.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean9.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean9);
+
+        WxBean bean10 = new WxBean();
+        bean10.setChatHead(6);
+        bean10.setId(beans.size() + 1l);
+        bean10.setType(6);
+        bean10.setIsRead(true);
+        bean10.setChatName("K米");
+        bean10.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean10.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean10);
+
+        WxBean bean11 = new WxBean();
+        bean11.setChatHead(7);
+        bean11.setId(beans.size() + 1l);
+        bean11.setType(6);
+        bean11.setIsRead(true);
+        bean11.setChatName("TODAY便利店南宁");
+        bean11.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean11.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean11);
+
+        WxBean bean12 = new WxBean();
+        bean12.setChatHead(8);
+        bean12.setId(beans.size() + 1l);
+        bean12.setType(6);
+        bean12.setIsRead(true);
+        bean12.setChatName("滴滴出行服务号");
+        bean12.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean12.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean12);
+
+        WxBean bean13 = new WxBean();
+        bean13.setChatHead(9);
+        bean13.setId(beans.size() + 1l);
+        bean13.setType(6);
+        bean13.setIsRead(true);
+        bean13.setChatName("服务通知");
+        bean13.setChatContent("租界归还通知");
+        bean13.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean13);
+
+        WxBean bean14 = new WxBean();
+        bean14.setChatHead(10);
+        bean14.setId(beans.size() + 1l);
+        bean14.setType(6);
+        bean14.setIsRead(true);
+        bean14.setChatName("海底捞火锅");
+        bean14.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean14.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean14);
+
+        WxBean bean15 = new WxBean();
+        bean15.setChatHead(11);
+        bean15.setId(beans.size() + 1l);
+        bean15.setType(6);
+        bean15.setIsRead(true);
+        bean15.setChatName("海澜之家");
+        bean15.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean15.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean15);
+
+        WxBean bean16 = new WxBean();
+        bean16.setChatHead(12);
+        bean16.setId(beans.size() + 1l);
+        bean16.setType(6);
+        bean16.setIsRead(true);
+        bean16.setChatName("捷停车");
+        bean16.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean16.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean16);
+
+        WxBean bean17 = new WxBean();
+        bean17.setChatHead(13);
+        bean17.setId(beans.size() + 1l);
+        bean17.setType(6);
+        bean17.setIsRead(true);
+        bean17.setChatName("京东JD.COM");
+        bean17.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean17.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean17);
+
+        WxBean bean18 = new WxBean();
+        bean18.setChatHead(14);
+        bean18.setId(beans.size() + 1l);
+        bean18.setType(6);
+        bean18.setIsRead(true);
+        bean18.setChatName("京喜商家信息平台");
+        bean18.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean18.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean18);
+
+        WxBean bean19 = new WxBean();
+        bean19.setChatHead(15);
+        bean19.setId(beans.size() + 1l);
+        bean19.setType(6);
+        bean19.setIsRead(true);
+        bean19.setChatName("美的鹭湖");
+        bean19.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean19.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean19);
+
+        WxBean bean20 = new WxBean();
+        bean20.setChatHead(16);
+        bean20.setId(beans.size() + 1l);
+        bean20.setType(6);
+        bean20.setIsRead(true);
+        bean20.setChatName("去哪儿网");
+        bean20.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean20.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean20);
+
+        WxBean bean21 = new WxBean();
+        bean21.setChatHead(17);
+        bean21.setId(beans.size() + 1l);
+        bean21.setType(6);
+        bean21.setIsRead(true);
+        bean21.setChatName("微派谁是卧底游戏助手");
+        bean21.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean21.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean21);
+
+        WxBean bean22 = new WxBean();
+        bean22.setChatHead(18);
+        bean22.setId(beans.size() + 1l);
+        bean22.setType(6);
+        bean22.setIsRead(true);
+        bean22.setChatName("微信游戏");
+        bean22.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean22.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean22);
+
+        WxBean bean23 = new WxBean();
+        bean23.setChatHead(19);
+        bean23.setId(beans.size() + 1l);
+        bean23.setType(1);
+        bean23.setChatType(1);
+        bean23.setChatNum("1");
+        bean23.setIsRead(true);
+        bean23.setChatName("微信运动");
+        bean23.setChatContent("[应用消息]");
+        bean23.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean23);
+
+        WxBean bean24 = new WxBean();
+        bean24.setChatHead(20);
+        bean24.setId(beans.size() + 1l);
+        bean24.setType(6);
+        bean24.setIsRead(true);
+        bean24.setChatName("星巴克中国");
+        bean24.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean24.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean24);
+
+        WxBean bean25 = new WxBean();
+        bean25.setChatHead(21);
+        bean25.setId(beans.size() + 1l);
+        bean25.setType(6);
+        bean25.setIsRead(true);
+        bean25.setChatName("众嗨联盟");
+        bean25.setChatContent(subContents[(int) ((Math.random() * subContents.length))]);
+        bean25.setChatTime(System.currentTimeMillis() - 1000 * 60 * mRandom.nextInt(600));
+        beans.add(bean25);
 
         Collections.sort(beans, new Comparator<WxBean>() {
             @Override

@@ -47,6 +47,16 @@
                 android:textSize="15sp" />
 
             <TextView
+                android:id="@+id/dialog_edit_content_tv"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="14dp"
+                android:text="修改消息内容"
+                android:textColor="@color/cl_000"
+                android:textSize="15sp" />
+
+            <TextView
                 android:id="@+id/dialog_delete_tv"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"

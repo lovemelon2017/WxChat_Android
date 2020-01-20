@@ -16,4 +16,6 @@ public interface OnClickDialogEditInterface {
     public void onEditTime(WxBean wxBean);
 
     public void onDelete(WxBean wxBean);
+
+    public void onEditContent(WxBean wxBean);
 }

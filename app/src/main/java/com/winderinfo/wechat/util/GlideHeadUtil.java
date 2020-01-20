@@ -499,6 +499,63 @@ public class GlideHeadUtil {
             case 2:
                 Glide.with(context).load(R.drawable.ic_hlj).into(imageView);
                 break;
+            case 3:
+                Glide.with(context).load(R.drawable.ic_sub_360).into(imageView);
+                break;
+            case 4:
+                Glide.with(context).load(R.drawable.ic_sub_coco).into(imageView);
+                break;
+            case 5:
+                Glide.with(context).load(R.drawable.ic_sub_hm).into(imageView);
+                break;
+            case 6:
+                Glide.with(context).load(R.drawable.ic_sub_km).into(imageView);
+                break;
+            case 7:
+                Glide.with(context).load(R.drawable.ic_sub_today).into(imageView);
+                break;
+            case 8:
+                Glide.with(context).load(R.drawable.ic_sub_ddcx).into(imageView);
+                break;
+            case 9:
+                Glide.with(context).load(R.drawable.ic_sub_fwtz).into(imageView);
+                break;
+            case 10:
+                Glide.with(context).load(R.drawable.ic_sub_hdlhg).into(imageView);
+                break;
+            case 11:
+                Glide.with(context).load(R.drawable.ic_sub_hlzj).into(imageView);
+                break;
+            case 12:
+                Glide.with(context).load(R.drawable.ic_sub_jtc).into(imageView);
+                break;
+            case 13:
+                Glide.with(context).load(R.drawable.ic_sub_jd).into(imageView);
+                break;
+            case 14:
+                Glide.with(context).load(R.drawable.ic_sub_jx).into(imageView);
+                break;
+            case 15:
+                Glide.with(context).load(R.drawable.ic_sub_mdlh).into(imageView);
+                break;
+            case 16:
+                Glide.with(context).load(R.drawable.ic_sub_qnw).into(imageView);
+                break;
+            case 17:
+                Glide.with(context).load(R.drawable.ic_sub_sswd).into(imageView);
+                break;
+            case 18:
+                Glide.with(context).load(R.drawable.ic_sub_yx).into(imageView);
+                break;
+            case 19:
+                Glide.with(context).load(R.drawable.ic_sub_wxyd).into(imageView);
+                break;
+            case 20:
+                Glide.with(context).load(R.drawable.ic_sub_xbk).into(imageView);
+                break;
+            case 21:
+                Glide.with(context).load(R.drawable.ic_sub_zhlm).into(imageView);
+                break;
         }
 
     }

@@ -30,6 +30,7 @@ public class HomEditDialog extends DialogFragment {
     TextView tvNumEdit;
     TextView tvTimeEdit;
     TextView tvDelete;
+    TextView tvContent;
 
     boolean isRead;
     WxBean wxBean;
@@ -63,6 +64,21 @@ public class HomEditDialog extends DialogFragment {
         tvNumEdit = view.findViewById(R.id.dialog_edit_message_tv);
         tvTimeEdit = view.findViewById(R.id.dialog_edit_time_tv);
         tvDelete = view.findViewById(R.id.dialog_delete_tv);
+        tvContent = view.findViewById(R.id.dialog_edit_content_tv);
+
+        if (wxBean != null) {
+            int type = wxBean.getType();
+            if (type == 1 || type == 2) {
+                tvStateRead.setVisibility(View.VISIBLE);
+                tvNumEdit.setVisibility(View.VISIBLE);
+                tvContent.setVisibility(View.GONE);
+            } else {
+                tvStateRead.setVisibility(View.GONE);
+                tvNumEdit.setVisibility(View.GONE);
+                tvContent.setVisibility(View.VISIBLE);
+            }
+        }
+
 
         if (isRead) {
             tvStateRead.setText("标记未读");
@@ -105,6 +121,15 @@ public class HomEditDialog extends DialogFragment {
             public void onClick(View view) {
                 if (click != null) {
                     click.onDelete(wxBean);
+                }
+            }
+        });
+
+        tvContent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (click != null) {
+                    click.onEditContent(wxBean);
                 }
             }
         });

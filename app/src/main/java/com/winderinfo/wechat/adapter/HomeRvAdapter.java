@@ -3,6 +3,7 @@ package com.winderinfo.wechat.adapter;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.chad.library.adapter.base.BaseMultiItemQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -54,11 +55,22 @@ public class HomeRvAdapter extends BaseMultiItemQuickAdapter<WxBean, BaseViewHol
                     }
 
                 }
+
                 ImageView head = helper.getView(R.id.chat_user_head_iv);
-                GlideHeadUtil.glideContactHead(mContext, head, item.getChatHead());
+
                 String chatName = item.getChatName();
+                TextView tvName = helper.getView(R.id.chat_user_name_tv);
+
                 if (!TextUtils.isEmpty(chatName)) {
-                    helper.setText(R.id.chat_user_name_tv, chatName);
+
+                    if ("微信运动".equals(chatName)) {
+                        GlideHeadUtil.glideGZHHead(mContext, head, item.getChatHead());
+                        tvName.setTextColor(mContext.getResources().getColor(R.color.cl_text_blue));
+                    } else {
+                        GlideHeadUtil.glideContactHead(mContext, head, item.getChatHead());
+                        tvName.setTextColor(mContext.getResources().getColor(R.color.cl_000));
+                    }
+                    tvName.setText(chatName);
                 }
                 long time = item.getChatTime();
                 helper.setText(R.id.chat_user_time_tv, ChatTimeUtil.getTimeString(time));
@@ -191,6 +203,17 @@ public class HomeRvAdapter extends BaseMultiItemQuickAdapter<WxBean, BaseViewHol
                 break;
 
             case WxBean.TYPE_GZH:
+
+                boolean read6 = item.isRead();
+                if (read6) {
+                    helper.getView(R.id.chat_message_tv).setVisibility(View.GONE);
+                } else {
+                    helper.getView(R.id.chat_message_tv).setVisibility(View.VISIBLE);
+                }
+                String num = item.getChatNum();
+                if (!TextUtils.isEmpty(num)) {
+                    helper.setText(R.id.chat_message_tv, num);
+                }
                 //公众号
                 ImageView ivHeadGz = helper.getView(R.id.chat_user_head_iv);
                 int chatHead = item.getChatHead();
